@@ -1,5 +1,5 @@
-#CABACE: Injecting Character Sequence Information and Domain Knowledge for Enhanced Acronym Extraction
-BacKGProp-AAAI-22
+#CABACE
+
 This repository contains the code and pre-processed data for our paper in SDU **AAAI 2022** titled: **CABACE: Injecting Character Sequence Information and Domain Knowledge for Enhanced Acronym Extraction**
 [[Paper]](https://arxiv.org/abs/2112.13237) [[Project Page]](https://abhra-niliitkgp.github.io/CABACE/)
 
