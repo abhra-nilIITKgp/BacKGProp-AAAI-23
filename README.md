@@ -1,16 +1,29 @@
-# BacKGProp-AAAI-22
-Code and Pre-Processed data for our paper in SDU **AAAI 2022** titled: **CABACE: Injecting Character Sequence Information and Domain Knowledge for Enhanced Acronym Extraction**
+#CABACE: Injecting Character Sequence Information and Domain Knowledge for Enhanced Acronym Extraction
+BacKGProp-AAAI-22
+This repository contains the code and pre-processed data for our paper in SDU **AAAI 2022** titled: **CABACE: Injecting Character Sequence Information and Domain Knowledge for Enhanced Acronym Extraction**
+[[Paper]](https://arxiv.org/abs/2112.13237) [[Project Page]](https://abhra-niliitkgp.github.io/CABACE/)
 
-To create BIO tags, use the following  example command
+&nbsp;
+<p align="center">
+<img src='./Images/CABACE1.png' width=800>
+</p>
+<p align="center">
+<b>Figure: The CABACE Architecture. Input tokens are passed to mBERT (right) and to the CNN & max-pooling layers (left)
+character-by-character (using character embeddings). The resulting outputs from both are concatenated and passed through a
+prediction layer (linear + softmax) before computing the augmented loss function. Note that the token ’(CPI)’ gets split into
+sub-words by mBERT tokenizer. </p>
+&nbsp;
+
+### To create BIO tags, use the following  example command
 
 ```python data/prep_BIO_tags.py -s data/english/legal/dev.json -t   data/sample.txt```
 
-We support different model architectures to solve AE, and they can be identified using the following **model_ids**
+### We support different model architectures to solve AE, and they can be identified using the following **model_ids**
 
 * SimpleBert - 0
 * CharacterTransformBert - 1
 
-To run the code on English Legal dataset using simple BERT for Sequence labelling(model_id = 0) use:
+### To run the code on English Legal dataset using simple BERT for Sequence labelling(model_id = 0) use:
 
 ```
 python main.py --src_folder data \
@@ -30,7 +43,7 @@ python main.py --src_folder data \
      
  ```
  
- To run the code on English Legal dataset using CharacterTransformBert for Sequence labelling(model_id = 1) use:
+ ### To run the code on English Legal dataset using CharacterTransformBert for Sequence labelling(model_id = 1) use:
  
  * 1) Download and unzip fastText Word Vectors in the root directory using the following commands:
   ``` 
@@ -84,3 +97,17 @@ python main.py --src_folder data \
  
  The Scraping code is also included in `scraping/` which includes the English Scientific scraping code from ArXiV anf French scraping code from Wikipedia. The french code can be edited by replacing `fr` in links with the corresponding language code in wikipedia. Also the link of the initial page where scraping starts shall be changed to any similar page (on topics like Neural Networks, Artificial Intelligence or any other scientific topic with a lot of acronyms) in the other language.
 
+### Citing CABACE
+
+If you use codes in this repository, consider citing CABACE. Thanks!
+
+```
+@misc{kannen2021cabace,
+      title={CABACE: Injecting Character Sequence Information and Domain Knowledge for Enhanced Acronym and Long-Form Extraction}, 
+      author={Nithish Kannen and Divyanshu Sheth and Abhranil Chandra and Shubhraneel Pal},
+      year={2021},
+      eprint={2112.13237},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
