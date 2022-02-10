@@ -9,7 +9,7 @@ This repository contains the code and pre-processed data for our paper in SDU **
 <img src='./Images/CABACE1.png' width=800>
 </p>
 <p align="center">
-<b>Figure- The CABACE Architecture:</b> Input tokens are passed to mBERT (right) and to the CNN & max-pooling layers (left)
+<b>Figure - The CABACE Architecture:</b> Input tokens are passed to mBERT (right) and to the CNN & max-pooling layers (left)
 character-by-character (using character embeddings). The resulting outputs from both are concatenated and passed through a
 prediction layer (linear + softmax) before computing the augmented loss function. Note that the token ’(CPI)’ gets split into
 sub-words by mBERT tokenizer. </p>
